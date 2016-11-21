@@ -1,5 +1,5 @@
 #  Cleaner Dota 2 by @Mirajana @iCCup.Platoon
-![main screeen](https://s11.postimg.org/ombbingeb/logopng.png)
+[![logopng.png](https://s11.postimg.org/ombbingeb/logopng.png)](https://postimg.org/image/66qul929r/)
 
 # Качай:
 > https://github.com/mrG0bliN/dota2cleaner/releases/latest
