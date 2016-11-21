@@ -1,5 +1,5 @@
 #  Cleaner Dota 2 by @Mirajana @iCCup.Platoon
-
+<img> https://s15.postimg.org/qzhtgqkzv/stt.jpg
 • http://dota2.ru/forum/threads/1-03-svezhaja-chistilka-stima-s-dotkoj-dlja-reborn.833975/
 <hr>
 Почини свой steam сейчас зачем откладывать на потом?!:
