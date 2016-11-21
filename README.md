@@ -1,9 +1,6 @@
-# dota2cleaner
-•
-http://dota2.ru/forum/threads/1-03-svezhaja-chistilka-stima-s-dotkoj-dlja-reborn.833975/
-•
-Cleaner Dota 2 by
-@Mirajana @iCCup.Platoon
+#  Cleaner Dota 2 by @Mirajana @iCCup.Platoon
+
+• http://dota2.ru/forum/threads/1-03-svezhaja-chistilka-stima-s-dotkoj-dlja-reborn.833975/
 <hr>
 Почини свой steam сейчас зачем откладывать на потом?!:
 больше функционал, стабильней, продуктивней, качественней и самое главное
