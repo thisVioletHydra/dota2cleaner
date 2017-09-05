@@ -1,6 +1,6 @@
 @Echo Off >Nul
 @chcp 1251 >nul
-title Latest version - Cleaner_dota2_by_Mirajana_12062017
+title Latest version - Cleaner_dota2_by_Mirajana_01092017
 @CLS
 rem =========================================
 rem vk.com/id34747001
@@ -545,8 +545,10 @@ goto :Choice5
 :Choice2
 :getupidiot
 @Cls
-rem killidiot
-taskkill.exe /F /IM steam.exe
+rem killidiot
+
+taskkill.exe /F /IM steam.exe
+
 echo all-Done?!
 chcp 1251 >Nul
 	set zap=Запускаю Steam, если найду...
