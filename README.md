@@ -1,21 +1,19 @@
-#  Cleaner Dota 2 by @Mirajana @iCCup.Platoon
-[![logopng-low.png](https://s22.postimg.org/7g245ujkh/logopng_low.png)](https://github.com/mrG0bliN/dota2cleaner/releases/latest)
+#  Cleaner Dota 2 by @Mirajana
+[![logopng-low.png](https://vistanews.ru/uploads/posts/2017-10/1508596664_1508572992_1.png)](https://github.com/mrG0bliN/dota2cleaner/releases/)
 
 # Качай:
-> https://github.com/mrG0bliN/dota2cleaner/releases/latest
+> https://github.com/mrG0bliN/dota2cleaner/releases/
 
-<br>
 
 # Используй:
 Положи РЯДОМ с папкой Steam и запусти
 Нажми пару раз 1 1 1 и ожидай окончания оптимизации
 По завершению операци, steam сам запустится
 
-<br>
 
 # Изучай:
 #### Автоматическое удаление ненужного хлама
- на подобие ручного удаления. В 70% случаев исправляет различные баги глюки как с дотой так и со стимом
+На подобие ручного удаления. В 70% случаев исправляет различные баги глюки как с дотой так и со стимом
 Удаляется определенные папки в стиме содержащие интернет кеш, логи, дампы, и прочую ерунду
 #### Батник для удаления дампов логов олд файлов временного мусора ии т.д. 
 и это еще не все, как показала практика, лечилка фиксит 80% всех болезней стима и доты дада и это не рекламная утка
@@ -25,7 +23,6 @@
 Ну не сказка ли ? :)
 #### Оптимизирует работу steam, путем деактивации не используемого контета складируемого в течении продолжительного времени.
 
-<br>
 
 # Читай:
-• http://dota2.ru/forum/threads/1-03-svezhaja-chistilka-stima-s-dotkoj-dlja-reborn.833975/
+• https://dota2.ru/forum/posts/11883698/
