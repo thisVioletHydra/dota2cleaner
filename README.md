@@ -1,5 +1,5 @@
 #  Cleaner Dota 2 by @Mirajana
-[![logopng-low.png](https://vistanews.ru/uploads/posts/2017-10/1508596664_1508572992_1.png)](https://github.com/mrG0bliN/dota2cleaner/releases/)
+[![logopng-low.png](https://vistanews.ru/uploads/posts/2017-10/1508596664_1508572992_1.png =250x250)](https://github.com/mrG0bliN/dota2cleaner/releases/)
 
 # Качай:
 > https://github.com/mrG0bliN/dota2cleaner/releases/
