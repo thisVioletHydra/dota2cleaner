@@ -1,6 +1,6 @@
-@Echo Off >NUL
+@echo Off >NUL
 @chcp 1251 >NUL
-title Latest version - Cleaner_dota2_by_Mirajana_01-07-2018
+title Latest version - Cleaner_dota2_by_Mirajana_01-03-2019
 @CLS
 rem =========================================
 rem vk.com/id34747001
@@ -9,53 +9,90 @@ setlocal enableextensions enabledelayedexpansion
 color 0f
 mode con:cols=70 lines=16
 
-set steamDir=C:\Program Files x86\Steam\
-set progname=cleaner_dota2
-Set steamCore=Steam
+SET steamPATH=C:\Program Files x86\Steam\
+SET dotaPATH=Steam\STEAMAPPS\common\"dota 2 beta"
+SET buildName=Lates_cleaner_dota2_by_mirajana.cmd
+SET steamCore=Steam
+
+SET intro1= ======================by=Mirajana================================
+SET intro2= ==Программа для очистки Steam и игры Dota 2 от временных файлов==
+SET intro3= ======================01-03-2019=================================
+
+rem hidden space symbole
+SET "space= "
 
 @If Exist "%steamCore%\*.*" (
-		Echo Папка %steamCore% ЕСТЬ!
-		goto startsteam
-) Else (
-		Echo Папка %steamCore% НЕ найдена!
-		Echo поместите %progname% РЯДОМ с папкой Steam
-		Echo По умолчанию  Steam там %steamDir%
+	echo Папка %steamCore% ЕСТЬ!
+	@if Exist "steam.exe" (
+		@cls
+		chcp 1251 >NUL
+		echo %intro1%
+		echo %intro2%
+		echo %intro3%
+		echo.
+		echo %space% ОШИБКА
+		echo %space% • Возможно вы положили файл случайно в САМ Steam
+		echo %space% • следует переместить %buildName%
+		echo %space% • на один уровень выше
+		echo.
+		echo %space% Поместите %buildName% РЯДОМ с папкой Steam
+		echo.
+		echo %space% Стандартное место установки STEAM:
+		echo %space% • %steamPATH%
 		pause 1>NUL
 		endlocal
 		exit /b 0
+		) Else (
+			goto startSteam
 		)
+	) Else (
+		@cls
+		chcp 1251 >NUL
+		echo %intro1%
+		echo %intro2%
+		echo %intro3%
+		echo.
+		echo %space% ОШИБКА
+		echo %space% • Папка %steamCore% НЕ найдена
+		echo.
+		echo %space% Поместите %buildName% РЯДОМ с папкой Steam
+		echo.
+		echo %space% Стандартное место установки STEAM:
+		echo %space% • %steamPATH%
+		pause 1>NUL
+		endlocal
+		exit /b 0
+	)
 
-
-:startsteam
+	
+:startSteam
 @cls
 chcp 1251 >NUL
-	set RR= Выбран вариант:
-	set lll1= ======================by=Mirajana================================
-	set lll2= ==Программа для очистки Steam и игры Dota 2 от временных файлов==
-	set lll3= ======================01-07-2018=================================
-	set go1Main=  1.Исцеление † Steam от проблем
-	set go2Main=  2.Дополнительные плюшки
-	set go3Main=  3.Удалить остатки старой доты
-	set go4Main=  4.Changelog
-	set go5Main=  5.*Тестовые функции*
-	set go9Main=  9.Выход
-	set p=.
-	set varMain=  Варианты очистки Steam:
+	SET RR= Выбран вариант:
+ 
+	SET go1Main= 1.Исцеление † Steam от проблем
+	SET go2Main= 2.Дополнительные плюшки
+	SET go3Main= 3.Удалить остатки старой доты
+	SET go4Main= 4.Changelog
+	SET go5Main= 5.*Тестовые функции*
+	SET go9Main= 9.Выход
+	SET p=.
+	SET varMain= Варианты очистки Steam:
 
 	chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
 		echo.
-		echo  %varMain%
+		echo %varMain%
 		echo.
-		echo  	%go1Main%
+		echo %space% %go1Main%
 		echo.
-		echo  	%go2Main%
-		echo  	%go3Main%
-		echo  	%go4Main% 
-		echo  	%go5Main% 
-		echo  	%go9Main%
+		echo %space% %go2Main%
+		echo %space% %go3Main%
+		echo %space% %go4Main% 
+		echo %space% %go5Main% 
+		echo %space% %go9Main%
 		echo.
 choice.exe /c 123459 /m "#" 1>NUL
 call :Choice%ErrorLevel%
@@ -66,35 +103,32 @@ rem =======================начало _choice1======================================
 Cls
 
 chcp 1251 >NUL
-	set u=ПЕРЕД УДАЛЕНИЕМ ЗАКРОЙТЕ STEAM ПОЛНОСТЬЮ
-	set x=Сейчас будут очищены папки и файлы с мусором
-	set b=Убедитесь что %progname% лежит РЯДОМ с папкой steam
-	set c=Нажмите пробел, если cогласны УДАЛИТЬ файлы
+	SET param1=Сейчас будут очищены папки и файлы с мусором
+	SET param2=Нажмите пробел, если cогласны УДАЛИТЬ файлы
+	SET param3=Для Отмены - ЗАКРЫТЬ ПРОГРАММУ КРЕСТИКОМ В УГЛУ!
 chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
+	echo.
 	echo %RR% %go1Main%
 	echo.
-	echo 	%u%
+	echo %space% %param1%
 	echo.
-	echo 	%x%
-	echo 	%b%
-	echo.
-	echo 	%c%
+	echo %space% %param2%
+	echo %space% %param3%
 pause 1>NUL
 @CLS
 
 rem пред удаление
 rem ==================================================================
 chcp 1251 >NUL
-	set xwe=Пожалуйста подождите...
+	SET xwe=Пожалуйста подождите...
 	chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
+	echo.
 	echo %xwe%
 	echo.
 
@@ -151,190 +185,192 @@ set	loader93=Очищение: [•••••••••••••••••••••••••••••••••••••••••••••••oooo] 93%
 set	loader95=Очищение: [••••••••••••••••••••••••••••••••••••••••••••••••ooo] 95%%
 set	loader97=Очищение: [•••••••••••••••••••••••••••••••••••••••••••••••••oo] 97%%
 set	loader99=Очищение: [••••••••••••••••••••••••••••••••••••••••••••••••••o] 99%%
-set loader100="Все готово, Steam сейчас САМ! запуститься."
+SET loader100="Все готово, Steam сейчас САМ! запуститься."
 
 chcp 866 >NUL
 
 rem --------
 rem killidiot
 taskkill.exe /F /IM steam.exe
-echo all_done?
+echo Reloading Steam...
 
 cls
 echo %loader01%
 TIMEOUT 1 /NOBREAK >NUL
 cls
 echo %loader03%
-del /s /q  Steam\*.log  1>&2
+del /s /q Steam\*.log 1>&2
 cls
 echo %loader05%
-del /s /q  Steam\*.dmp  1>&2
-del /s /q  Steam\*.dump  1>&2
-del /s /q  Steam\*.mdmp  1>&2
+del /s /q Steam\*.dmp 1>&2
+del /s /q Steam\*.dump 1>&2
+del /s /q Steam\*.mdmp 1>&2
 cls
 echo %loader07%
-del /s /q  Steam\*.old  1>&2
+del /s /q Steam\*.old 1>&2
 cls
 echo %loader09%
-del /s /q  Steam\*.lnk  1>&2
+del /s /q Steam\*.lnk 1>&2
 cls
 echo %loader11%
-del /s /q  Steam\*.cachedmsg  1>&2
+del /s /q Steam\*.cachedmsg 1>&2
 cls
 echo %loader13%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\*.log  1>&2
+del /s /q %dotaPATH%\*.log 1>&2
 cls
 echo %loader15%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\*.mdmp  1>&2
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\*.dmp  1>&2
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\*.dump  1>&2
+del /s /q %dotaPATH%\*.mdmp 1>&2
+del /s /q %dotaPATH%\*.dmp 1>&2
+del /s /q %dotaPATH%\*.dump 1>&2
 cls
 echo %loader17%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\*.old  1>&2
+del /s /q %dotaPATH%\*.old 1>&2
 cls
 echo %loader19%
-Rd /s /q  Steam\Backups\  1>&2
+RD /s /q Steam\Backups\ 1>&2
 cls
 echo %loader21%
-Rd /s /q  Steam\dota2luncher\  1>&2
+RD /s /q Steam\dota2luncher\ 1>&2
 cls
 echo %loader23%
-Rd /s /q  Steam\STEAMAPPS\depotcache\  1>&2
-Rd /s /q Steam\STEAMAPPS\temp\  1>&2
+RD /s /q Steam\STEAMAPPS\depotcache\ 1>&2
+RD /s /q Steam\STEAMAPPS\temp\ 1>&2
 cls
 echo %loader25%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\dota\*.log  1>&2
+del /s /q %dotaPATH%\dota\*.log 1>&2
 cls
 echo %loader27%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\dota\*.mdmp  1>&2
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\dota\*.dmp  1>&2
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\dota\*.dump  1>&2
+del /s /q %dotaPATH%\dota\*.mdmp 1>&2
+del /s /q %dotaPATH%\dota\*.dmp 1>&2
+del /s /q %dotaPATH%\dota\*.dump 1>&2
 cls
 echo %loader29%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\dota\*.old  1>&2
+del /s /q %dotaPATH%\dota\*.old 1>&2
 cls
 echo %loader31%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\game\dota\guides\workshop\*.*  1>&2
+del /s /q %dotaPATH%\game\dota\guides\workshop\*.* 1>&2
 cls
 echo %loader33%
-del /s /q  Steam\STEAMAPPS\common\"dota 2 beta"\game\dota\replays\*.*  1>&2
+del /s /q %dotaPATH%\game\dota\replays\*.* 1>&2
 cls
 echo %loader35%
 rem целиком
 rem ==================================================================
 
-Rd /s /q Steam\bin\  1>&2
+RD /s /q Steam\bin\ 1>&2
 cls
 echo %loader37%
-Rd /s /q Steam\amf\  1>&2
+RD /s /q Steam\amf\ 1>&2
 cls
 echo %loader39%
-Rd /s /q Steam\appcache\  1>&2
+RD /s /q Steam\appcache\ 1>&2
 cls
 echo %loader41%
-Rd /s /q Steam\config\htmlcache\  1>&2
+RD /s /q Steam\config\htmlcache\ 1>&2
 cls
 echo %loader43%
-Rd /s /q Steam\config\overlayhtmlcache\  1>&2
+RD /s /q Steam\config\overlayhtmlcache\ 1>&2
 cls
 echo %loader45%
-Rd /s /q Steam\depotcache\  1>&2
+RD /s /q Steam\depotcache\ 1>&2
 cls
 echo %loader47%
-Rd /s /q Steam\dumps\  1>&2
+RD /s /q Steam\dumps\ 1>&2
 cls
 echo %loader49%
-Rd /s /q Steam\Frameworks\  1>&2
+RD /s /q Steam\Frameworks\ 1>&2
 cls
 echo %loader51%
-Rd /s /q Steam\graphics\  1>&2
+RD /s /q Steam\graphics\ 1>&2
 cls
 echo %loader53%
-Rd /s /q Steam\logs\  1>&2
+RD /s /q Steam\logs\ 1>&2
 cls
 echo %loader55%
-Rd /s /q Steam\reslists\  1>&2
+RD /s /q Steam\reslists\ 1>&2
 cls
 echo %loader57%
-Rd /s /q Steam\servers\  1>&2
+RD /s /q Steam\servers\ 1>&2
 cls
 echo %loader59%
 rem fix/games__icons
 cls
 echo %loader61%
-Rd /s /q Steam\tenfoot\  1>&2
+RD /s /q Steam\tenfoot\ 1>&2
 cls
 echo %loader63%
-Rd /s /q Steam\music\  1>&2
+RD /s /q Steam\music\ 1>&2
 cls
 echo %loader65%
-Rd /s /q Steam\package\tmp\ 1>&2
-Rd /s /q Steam\friends\  1>&2
+RD /s /q Steam\package\tmp\ 1>&2
+RD /s /q Steam\friends\ 1>&2
 cls
 echo %loader67%
-Rd /s /q Steam\vrpanorama\  1>&2
+RD /s /q Steam\vrpanorama\ 1>&2
+RD /s /q Steam\STEAMAPPS\shadercache\ 1>&2
+RD /s /q %dotaPATH%\steam_shader_cache\ 1>&2
 cls
 echo %loader69%
-Rd /s /q Steam\remoteui\  1>&2
+RD /s /q Steam\remoteui\ 1>&2
 cls
 echo %loader71%
-Rd /s /q Steam\public\  1>&2
+RD /s /q Steam\public\ 1>&2
 cls
 echo %loader73%
-Rd /s /q Steam\resource\  1>&2
+RD /s /q Steam\resource\ 1>&2
 cls
 echo %loader75%
-Rd /s /q Steam\html5app\  1>&2
+RD /s /q Steam\html5app\ 1>&2
 cls
 echo %loader77%
-del /s /q  Steam\STEAMAPPS\workshop\content\570\*.bin  1>&2
+del /s /q Steam\STEAMAPPS\workshop\content\570\*.bin 1>&2
 cls
 echo %loader79%
-for /d %%i in ("Steam\STEAMAPPS\workshop\content\570\*") do rd /q "%%i"  1>&2
+for /d %%i in ("Steam\STEAMAPPS\workshop\content\570\*") do RD /q "%%i" 1>&2
 cls
 echo %loader81%
-Set "Otkuda=Steam"
-Set "NoDelete=loglist.NoDelete"
-Set "DPath=%~dp0"
+SET "mainPATH=Steam"
+SET "NoDelete=loglist.NoDelete"
+SET "DPath=%~dp0"
 cls
 echo %loader83%
-@Echo %0 >%NoDelete%
+@echo %0 >%NoDelete%
 
->> %NoDelete% Echo \Steam\config\
+>> %NoDelete% echo \Steam\config\
 cls
->> %NoDelete% Echo \Steam\steam\games\
+>> %NoDelete% echo \Steam\steam\games\
 cls
 echo %loader85%
->> %NoDelete% Echo \Steam\controller_base\
+>> %NoDelete% echo \Steam\controller_base\
 cls
 echo %loader87%
->> %NoDelete% Echo \Steam\package\
+>> %NoDelete% echo \Steam\package\
 cls
 echo %loader89%
->> %NoDelete% Echo \Steam\skins\
+>> %NoDelete% echo \Steam\skins\
 cls
 echo %loader91%
->> %NoDelete% Echo \Steam\STEAMAPPS\
->> %NoDelete% Echo \Steam\steamapps\
->> %NoDelete% Echo \Steam\userdata\
+>> %NoDelete% echo \Steam\STEAMAPPS\
+>> %NoDelete% echo \Steam\steamapps\
+>> %NoDelete% echo \Steam\userdata\
 cls
 echo %loader93%
-Set "Mask1=*ssfn*"
-Set "Mask2=*.blob" "steam.exe" "uninstall.exe"
+SET "Mask1=*ssfn*"
+SET "Mask2=*.blob" "steam.exe" "uninstall.exe"
 cls
 echo %loader95%
-for /f "usebackq Delims=" %%f in (`dir "%DPath%%Otkuda%\%Mask1%" "%Otkuda%\%Mask2%" /b /s /A:-d 2^>NUL`) Do Echo %%f>>"%NoDelete%"
+for /f "usebackq Delims=" %%f in (`dir "%DPath%%mainPATH%\%Mask1%" "%mainPATH%\%Mask2%" /b /s /A:-d 2^>NUL`) Do echo %%f>>"%NoDelete%"
 cls
 
 echo %loader97%
-FOR /F "usebackq delims=" %%f IN (`xcopy "%DPath%%Otkuda%\*.*" \ /L /S /EXCLUDE:%NoDelete%`) DO Del "%%f"
+FOR /F "usebackq delims=" %%f IN (`xcopy "%DPath%%mainPATH%\*.*" \ /L /S /EXCLUDE:%NoDelete%`) DO Del "%%f"
 Del %NoDelete%
 cls
 
 echo %loader99%
-Rd /s /q Steam\clientui\  1>&2
-Rd /s /q Steam\vr\  1>&2
-Rd /s /q Steam\drivers\  1>&2
+RD /s /q Steam\clientui\ 1>&2
+RD /s /q Steam\vr\ 1>&2
+RD /s /q Steam\drivers\ 1>&2
 @CLS
 echo %loader100%
 pause
@@ -349,71 +385,72 @@ rem =======================начало _choice2======================================
 @Cls
 	rem 1
 chcp 1251 >NUL
-	set dop_a=[1/3]Дополнительные параметры для удаления
-	set dop_b=Очистить папку Download?
-	set dop_v=(порой там бывают остатки недокаченных игр)
-	set dop_g=ВНИМАНИЕ! Если что то скачиваете через Steam, пропустите данный пункт
-	set knopkaYN=Нажмите кнопку: Удалить Y \ Пропустить N
+	SET dop_a=[1/3]Дополнительные параметры для удаления
+	SET dop_b=Очистить папку Download?
+	SET dop_v=(порой там бывают остатки недокаченных игр)
+	SET dop_g=ВНИМАНИЕ! Если, в данный момент качаете игру через Steam, пропустите данный пункт
+	SET knopkaYN=Нажмите кнопку: Удалить Y \ Пропустить N
 chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
+	echo.
 	echo %RR% %go2Main%
 	echo.
-echo %dop_a%
+echo %space% %dop_a%
 echo.
-echo %dop_b%
-echo %dop_v%
-echo %dop_g%
-echo %knopkaYN%
-Rd /s Steam\STEAMAPPS\downloading\  1>&2
-Rd /s /q Steam\STEAMAPPS\temp\  1>&2
+echo %space% %dop_b%
+echo %space% %dop_v%
+echo.
+echo %space% %dop_g%
+echo %space% %knopkaYN%
+RD /s Steam\STEAMAPPS\downloading\ 1>&2
+RD /s /q Steam\STEAMAPPS\temp\ 1>&2
 @CLS
 
 	rem 2
 chcp 1251 >NUL
-	set dop_a2=[2/3]Дополнительные параметры для удаления
-	set dop_b2=Очистить папку Userdata?
-	set dop_v2=Удаляет остатки от других игр, чаще всего: cache, настройки, скриншоты, реплеи, сохранения.
-	set dop_g2=ВНИМАНИЕ! Возможно будут удалены сохранения от steam игр
-	set dop_d2=(зачастую сейвы хранятся в облаке Steam, данная опция НЕ повредит ваши сохранки)
+	SET dop_a2=[2/3]Дополнительные параметры для удаления
+	SET dop_b2=Очистить папку Userdata?
+	SET dop_v2=Удаляет остатки от других игр, чаще всего: cache, настройки, скриншоты, реплеи, сохранения.
+	SET dop_g2=ВНИМАНИЕ! Возможно будут удалены сохранения от steam игр
+	SET dop_d2=(зачастую сейвы хранятся в облаке Steam, данная опция НЕ повредит ваши сохранения)
 chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
+	echo.
 		echo %RR% %go2Main%
 	echo.
-echo %dop_a2%
+echo %space% %dop_a2%
 echo.
-echo %dop_b2%
-echo %dop_v2%
-echo %dop_g2%
-echo %dop_d2%
-echo %knopkaYN%
-Rd /s Steam\userdata\  1>&2
+echo %space% %dop_b2%
+echo %space% %dop_v2%
+echo.
+echo %space% %dop_g2%
+echo %space% %dop_d2%
+echo %space% %knopkaYN%
+RD /s Steam\userdata\ 1>&2
 @CLS
-
 
 	rem 3
 chcp 1251 >NUL
-	set dop_a3=[3/3]Дополнительные параметры для удаления
-	set dop_b3=Очистить скины Steam?
-	set dop_v3=Удаляются ваши обложки для Steam, полезно когда багнутый скин не дает запустить Steam (сбросить настройки)
+	SET dop_a3=[3/3]Дополнительные параметры для удаления
+	SET dop_b3=Очистить скины Steam?
+	SET dop_v3=Удаляются ваши обложки для Steam, полезно когда багнутый скин не дает запустить Steam (сбросить настройки)
 chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
-		echo %RR% %go2Main%
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
 	echo.
-echo %dop_a3%
+	echo %RR% %go2Main%
+	echo.
+echo %space% %dop_a3%
 echo.
-echo %dop_b3%
-echo %dop_v3%
-echo %knopkaYN%
-Rd /s Steam\skins\  1>&2
+echo %space% %dop_b3%
+echo %space% %dop_v3%
+echo %space% %knopkaYN%
+RD /s Steam\skins\ 1>&2
 @CLS
 goto equit
 rem =======================конец _choice2===========================================
@@ -424,45 +461,46 @@ rem =======================начало _choice3======================================
 @Cls
 
 chcp 1251 >NUL
-	set all_a=Дополнительные параметры для удаления
-	set all_b=Зачистка остатков старой dota2
-	set all_v=После перехода на Reborn, у многих могли остаться неиспользуемые
-	set all_g=файлы от dota2, рекомендую удалить их из за ненадобности.
-	set all_d=Для Отмены - ЗАКРЫТЬ ПРОГРАММУ КРЕСТИКОМ В УГЛУ!
+	SET all_a=Дополнительные параметры для удаления
+	SET all_b=Зачистка остатков старой dota2
+	SET all_v=После перехода на Reborn, у многих могли остаться неиспользуемые
+	SET all_g=файлы от dota2, рекомендую удалить их из за ненадобности.
+	SET all_d=Для Отмены - ЗАКРЫТЬ ПРОГРАММУ КРЕСТИКОМ В УГЛУ!
 chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
+	echo.
 	echo %RR%%go3Main%
 	echo.
-echo %all_a%
+echo %space% %all_a%
 echo.
-echo %all_b%
-echo %all_v%
-echo %all_g%
-echo %all_d%
+echo %space% %all_b%
+echo %space% %all_v%
+echo %space% %all_g%
+echo.
+echo %space% %all_d%
 
 pause
 
 chcp 1251 >NUL
-set sTargetFolder=steam\STEAMAPPS\common\dota 2 beta\
-set sExcludeFilesOrFolders="_CommonRedist" "EmptySteamDepot" "game"
+SET sTargetFolder=steam\STEAMAPPS\common\dota 2 beta\
+SET sExcludeFilesOrFolders="_CommonRedist" "EmptySteamDepot" "game"
 
 FOR /F "usebackq delims=" %%i IN (`dir "%sTargetFolder%\" /b /A:D 2^>NUL`) DO (
-	Set /A Log=0
-	FOR %%j IN (%sExcludeFilesOrFolders%) DO If "%%i"==%%j Set /A Log=1
-	If !Log!==0 Rd /s /q "%sTargetFolder%\%%i"
+	SET /A Log=0
+	FOR %%j IN (%sExcludeFilesOrFolders%) DO If "%%i"==%%j SET /A Log=1
+	If !Log!==0 RD /s /q "%sTargetFolder%\%%i"
 )
 
 FOR /F "usebackq delims=" %%i IN (`dir "%sTargetFolder%\" /b /A:-D 2^>NUL`) DO (
-	Set /A Log=0
-	FOR %%j IN (%sExcludeFilesOrFolders%) DO If "%%i"==%%j Set /A Log=1
+	SET /A Log=0
+	FOR %%j IN (%sExcludeFilesOrFolders%) DO If "%%i"==%%j SET /A Log=1
 	If !Log!==0 Del "%sTargetFolder%\%%i"
 )
-Rd /s /q Steam\STEAMAPPS\common\"dota 2 beta"\EmptySteamDepot\  1>&2
+RD /s /q %dotaPATH%\EmptySteamDepot\ 1>&2
 rem создание папки
-rem MKDIR Steam\STEAMAPPS\common\"dota 2 beta"\EmptySteamDepot\  1>&2
+rem MKDIR Steam\STEAMAPPS\common\"dota 2 beta"\EmptySteamDepot\ 1>&2
 @CLS
 goto equit
 rem =======================конец _choice3===========================================
@@ -475,36 +513,36 @@ rem =======================начало _choice4======================================
 @Cls
 
 chcp 1251 >NUL
-	set r0=Список изменений:
-	set r1=add - добавил, fix - починил, kick - убрал
-	set r2=add Новая менюшка changelog
-	set r3=add Новая маска на удаление файлов .cachedmsg
-	set r4=fix Возможно пофиксил кодировку, нужно тестить
-	set r5=fix Удаление главных файлов в папке steam
-	set r6=add Возврат в главное меню после выполнение команды
-	set r7=kick мусор в коде
-	set r8=add
-	set r9=fix Грамматические ошибки
+	SET r0=Список изменений:
+	SET r1=add - добавил, fix - починил, kick - убрал
+	SET r2=add Новая менюшка changelog
+	SET r3=add Новая маска на удаление файлов .cachedmsg
+	SET r4=fix Возможно пофиксил кодировку, нужно тестить
+	SET r5=fix Удаление главных файлов в папке steam
+	SET r6=add Возврат в главное меню после выполнение команды
+	SET r7=kick мусор в коде
+	SET r8=add
+	SET r9=fix Грамматические ошибки
 chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
+	echo.
 	echo %RR%%go4Main%
 	echo.
-echo 	%r1%
-echo.
-echo 	%r2%
-echo 	%r3%
-echo 	%r4%
-echo 	%r5%
-echo 	%r6%
-echo 	%r7%
-echo 	%r8%
-echo 	%r9%
-echo.
+	echo %space% %r1%
+	echo.
+	echo %space% %r2%
+	echo %space% %r3%
+	echo %space% %r4%
+	echo %space% %r5%
+	echo %space% %r6%
+	echo %space% %r7%
+	echo %space% %r8%
+	echo %space% %r9%
+	echo.
 pause
-goto startsteam
+goto startSteam
 rem =======================конец _choice4===========================================
 
 
@@ -514,17 +552,17 @@ rem =========================начало _choice5====================================
 
 chcp 1251 >NUL
 	echo Глюченный раздел, чисто для меня, для тестирование некоторых функций.
-	set ncapsn=1.Выделить капсом папку steamapps
-	set nsteamn=2.Аварийный перезапуск Steam!
+	SET ncapsn=1.Выделить капсом папку steamapps
+	SET nsteamn=2.Аварийный перезапуск Steam!
 chcp 866 >NUL
 		echo %RR%%go5Main%
 		echo.
-		echo  %varMain%
-		echo 	%ncapsn%
-		echo 	%nsteamn%
-		echo 	%go9Main%
+		echo %varMain%
+		echo %space% %ncapsn%
+		echo %space% %nsteamn%
+		echo %space% %go9Main%
 
-choice.exe /c 129 /m "  Нажать:" 1>NUL
+choice.exe /c 129 /m " Нажать:" 1>NUL
 call :Choice%ErrorLevel%
 exit /b 0
 
@@ -535,7 +573,7 @@ pause
 chcp 1251 >NUL
 ren Steam\steamapps STEAMAPPS1
 ren Steam\steamapps1 STEAMAPPS
-set op=Папка переименована.
+SET op=Папка переименована.
 pause
 
 chcp 866 >NUL
@@ -554,9 +592,9 @@ rem killidiot
 
 taskkill.exe /F /IM steam.exe
 
-echo all-Done?!
+echo %space% Reloading STEAM...
 chcp 1251 >NUL
-	set zap=Запускаю Steam, если найду...
+	SET zap=Запускаю Steam, если найду...
 chcp 866 >NUL
 	echo %zap%
 	>NUL timeout/nobreak 1
@@ -570,16 +608,16 @@ rem =========================конец _choice5=====================================
 rem =========================начало _equit=========================================
 :equit
 chcp 1251 >NUL
-	set end_work=Поздравляю, очистка завершена!
+	SET end_work=Поздравляю, очистка завершена!
 chcp 866 >NUL
-		echo %lll1%
-		echo %lll2%
-		echo %lll3%
-		echo.
+	echo %intro1%
+	echo %intro2%
+	echo %intro3%
+	echo.
 		echo %end_work%
 echo.
 >NUL timeout/nobreak 2
-goto startsteam
+goto startSteam
 rem ===========================конец _equit==================================
 
 :Choice3

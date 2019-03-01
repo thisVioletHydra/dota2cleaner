@@ -1,15 +1,13 @@
-#  Cleaner Dota 2 by @Mirajana
+# Cleaner Dota 2 by @Mirajana
 [![logopng-low.png](http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/steam-icon.png)](https://github.com/mrG0bliN/dota2cleaner/releases/)
 
 # Качай:
 > https://github.com/mrG0bliN/dota2cleaner/releases/
 
-
 # Используй:
 Положи РЯДОМ с папкой Steam и запусти
 Нажми пару раз 1 1 1 и ожидай окончания оптимизации
 По завершению операци, steam сам запустится
-
 
 # Изучай:
 #### Автоматическое удаление ненужного хлама
@@ -22,7 +20,6 @@
 все выполняется ОДНОЙ кнопкой!
 Ну не сказка ли ? :)
 #### Оптимизирует работу steam, путем деактивации не используемого контета складируемого в течении продолжительного времени.
-
 
 # Читай:
 • https://dota2.ru/forum/posts/11883698/
