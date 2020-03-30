@@ -2,7 +2,7 @@
 [![logopng-low.png](http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/steam-icon.png)](https://github.com/mrG0bliN/dota2cleaner/releases/)
 
 # Качай:
-> https://github.com/mrG0bliN/dota2cleaner/releases/
+> https://github.com/thisVioletHydra/dota2cleaner/releases/
 
 # Используй:
 Положи РЯДОМ с папкой Steam и запусти
